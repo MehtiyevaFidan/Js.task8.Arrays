@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* elave et, sil funksiyasi */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        td {
+            border: 2px solid #0072ff;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            color: #0072ff;
+        }
+
+        td div {
+            border: 4px solid #ff4081;
+            padding: 15px;
+            border-radius: 12px;
+            background: #f0f4f8;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        td div:hover {
+            border-color: #e91e63;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        button {
+            background: #ff4081;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #e91e63;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        button:active {
+            background: #c2185b;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td id="demo"></td>
+            </tr>
+        </table>
+        <div>
+            <button id="elave">+</button>
+            <button id="sil">-</button>
+        </div>
+    </div>
+    <script>
+        let demo = document.getElementById("demo");
+        let elave = document.getElementById("elave");
+        let sil = document.getElementById("sil");
+        let arr = [];
+        
+        function goster() {
+            demo.innerHTML = '';
+            let kod = '';
+            for (let i = 0; i < arr.length; i++) {
+                kod += `<div>${arr[i]}</div>`;
+            }
+            demo.innerHTML = kod;
+        }
+        goster();
+        elave.onclick = function() {
+            arr.push("Fidan");
+            goster();
+        };
+        sil.onclick = function() {
+            if (arr.length > 0) {
+                arr.pop();
+                goster();
+            }
+        };
+    </script> 
+</body>
+</html>

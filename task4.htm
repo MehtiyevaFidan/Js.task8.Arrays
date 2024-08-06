@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- quvvet hesablama -->
+    <div id="demo"></div>
+    <script>
+        function hesabla(num) {
+            const say = num.toString().split('');
+            const quvvet = say.length;
+            let toplam = 0;
+            for (let i = 0; i < say.length; i++) {
+                toplam += Number(say[i]) ** quvvet;
+            }
+            return toplam;
+        }
+        function yarat(num) {
+            const say = num.toString().split('');
+            const quvvet = say.length;
+            let kod = ''
+            for (let i = 0; i < say.length; i++) {
+                kod += say[i] + '^' + quvvet;
+                if (i < say.length - 1) {
+                    kod += ' + ';
+                }
+            }
+            return kod;
+        }
+        const sayi = 1634;
+        const cemi = hesabla(sayi);
+        const kod = yarat(sayi);
+        document.getElementById('demo').innerHTML = `${sayi} = ${kod} = ${cemi}`;
+    </script>
+</body>
+</html>

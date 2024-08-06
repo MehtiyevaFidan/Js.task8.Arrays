@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="array"></div>
+    <!-- sort istifade etmeden sort funksiyasi yazmaq -->
+    <script>
+        const arr = [7, 3, -7, 4, 22, 200, 6, 9, 41, 35, 17, 32, 12];
+
+        function basla(arr) {
+            for (let i = 0; i < arr.length - 1; i++) {
+                for (let j = 0; j < arr.length - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        let eded = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = eded;
+                    }
+                }
+            }
+        }nbb
+        basla(arr);
+        let kod = "Sıralanmış ededler: ";
+        for (let i = 0; i < arr.length; i++) {
+            kod += arr[i];
+            if (i < arr.length - 1) {
+                kod += ", ";
+            }
+        }
+        document.getElementById("array").innerHTML = kod;
+    </script>
+</body>
+</html>

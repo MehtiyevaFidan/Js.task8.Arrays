@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- tekrarlanmis elementi silme -->
+    <script>
+        const array = [1, 2, 3, 4, 3, 4, 3, 3, 3, 2, 5, 6, 3, 7];
+        
+        const tekrar = [];
+        for (let i = 0; i < array.length; i++) {
+            for (let j = i + 1; j < array.length; j++) {
+                if (array[i] === array[j] && !tekrar.includes(array[i])) {
+                    tekrar.push(array[i]);
+                }
+            }
+        }
+        console.log( tekrar);
+    </script>
+</body>
+</html>
